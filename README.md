@@ -9,19 +9,19 @@ Write a C program to convert a 23.65 into 25 using pointer
 4.	Print the modified value.
 
 ## PROGRAM:
-
+```
+#include <stdio.h>
+int main() {
+    double num = 23.65;
+    double *ptr = &num; 
+    printf("Original value: %.2f\n", num);
+    *ptr = 25.0;
+    printf("Modified value: %.2f\n", num);
+    return 0;
+}
+```
 ## OUTPUT:
- 	
-
-
-
-
-
-
-
-
-
-
+ ![Screenshot 2025-05-08 131536](https://github.com/user-attachments/assets/a3e9bd37-ab4d-4ffe-9afd-d3c67634e67e)
 
 ## RESULT:
 Thus the program to convert a 23.65 into 25 using pointer has been executed successfully.
@@ -45,14 +45,28 @@ Write a C program to calculate the Product of first 12 natural numbers using Rec
 6.	Print the result, indicating it is the product of the first 12 natural numbers.
 
 ## PROGRAM:
+```
+#include <stdio.h>
+unsigned long long calculateProduct(int n) {
+    if (n == 1)
+        return 1;
+    else
+        return (unsigned long long)n * calculateProduct(n - 1);
+}
+int main() {
+    int n = 12;
+    unsigned long long product = calculateProduct(n);
+    printf("Product of first %d natural numbers: %llu\n", n, product);
+
+    return 0;
+}
+```
 ## OUTPUT:
-         		
+![Screenshot 2025-05-08 131739](https://github.com/user-attachments/assets/fde841a0-a67f-4d56-81b5-9dd38ac256ae)
+    		
 ## RESULT:
 
 Thus the program has been executed successfully.
- 
- 
-
 
 # EX-23-ARRAYS AND ITS OPERATIONS
 
@@ -68,17 +82,29 @@ Write C Program to find Sum of each row of a Matrix
 4.	Print the sum for each row.
 
 ## PROGRAM:
-
-
-
+```
+#include <stdio.h>
+int main() {
+    int matrix[3][3] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+    for (int i = 0; i < 3; i++) {
+        int sum = 0;
+        for (int j = 0; j < 3; j++) {
+            sum += matrix[i][j];
+        }
+        printf("Sum of row %d: %d\n", i + 1, sum);
+    }
+    return 0;
+}
+```
 ## OUTPUT
-
-
- 
- 
+![Screenshot 2025-05-08 132145](https://github.com/user-attachments/assets/5f018851-2b80-4a25-8b60-8a97bd7f29c1) 
 
  ## RESULT
- 
+ Thus the program has been executed successfully.
 
 
 # EX-24-STRINGS
@@ -96,14 +122,30 @@ Write C program for the below pyramid string pattern. Enter a string: PROGRAM En
 5.	End the program.
 
 ## PROGRAM:
-
-
- ## OUTPUT
-
- 
-
+```
+#include <stdio.h>
+#include <string.h>
+int main() {
+   char str[100];
+   int num_rows, i, j, len;
+   printf("Enter a string: ");
+   scanf("%s", str);
+   printf("Enter number of rows: ");
+   scanf("%d", &num_rows);
+   len = strlen(str);
+   for(i = 1; i <= num_rows; i++) {
+       for(j = 0; j < len; j++) {
+           printf("%c ", str[j]);
+       }
+       printf("\n");
+   }
+   
+   return 0;
+}
+```
+## OUTPUT
+![Screenshot 2025-05-08 132956](https://github.com/user-attachments/assets/0f9ad1f5-cf49-4f7c-ac34-eeaaf35698c9)
 ## RESULT
-
 Thus the C program to String process executed successfully
  
 
@@ -132,10 +174,28 @@ Step 5: Loop from i = 0 to i < n:
 Step 6: End the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
+int main() {
+    int n = 6;
+    int arr[n]; 
+    int *parr = arr; 
+    int i;
+    printf("Enter %d integers:\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", parr + i); 
+    }
+    printf("Array elements:\n");
+    for (i = 0; i < n; i++) {
+        printf("%d ", *(parr + i)); 
+    }
+    printf("\n");
 
+    return 0;
+}
+```
 ## OUTPUT
-
- 
+![Screenshot 2025-05-08 133512](https://github.com/user-attachments/assets/063d1e76-a019-4dd5-ab44-3c0188b9a06b)
 
 ## RESULT
 
